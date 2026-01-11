@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ML API</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login" style="text-align: center; margin-top: 10px;">
+       <h1>CROP PREDICTION</h1>
+       <form action="{{url_for('predict')}}" method="post">
+           <input type="text" name="Nitrogen" placeholder="Nitrogen" required/><br><br>
+           <input type="text" name="Phosphrus" placeholder="Phosphrus" required/><br><br>
+           <input type="text" name="Potassium" placeholder="Potassium" required/><br><br>
+           <input type="text" name="temperature" placeholder="temperature" required/><br><br>
+           <input type="text" name="humidity" placeholder="humidity" required/><br><br>
+           <input type="text" name="ph" placeholder="ph" required/><br><br>
+           <input type="text" name="Rainfall" placeholder="Rainfall"/><br><br>
+           <input type="submit" class="btn btn-primary" value="Predict Crop"/>
+
+         </form>
+         
+        <h2  class="predict-btn">Predicted Crop: {{ prediction }}</h2>
+    </div>
+
+
+</body>
+</html> 
